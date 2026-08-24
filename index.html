@@ -24,6 +24,7 @@
     .hero .button{font-family:"Fredoka","Trebuchet MS",Arial,sans-serif;font-size:13.5px;font-weight:700;min-height:47px;padding:11px 21px}
     .hero .primary{background:#ffd322;color:#082f5b;box-shadow:0 10px 24px rgba(82,75,0,.18)}
     .hero .glass{background:#fff;color:#075ab4;border:2px solid #fff;backdrop-filter:none;box-shadow:0 8px 20px rgba(0,62,130,.12)}
+    .header-logo{display:block;width:42px;height:42px;flex:0 0 42px;object-fit:contain;border-radius:50%;box-shadow:0 6px 14px rgba(20,55,85,.10)}
     .playful-steps{gap:10px}
     .playful-steps article{grid-template-columns:64px 50px 1fr;padding:15px 12px;background:rgba(255,255,255,.78)}
     .playful-steps .step-icon{width:52px;height:52px;font-size:26px}
@@ -41,7 +42,7 @@
       .books .book-card h3{margin:4px 0 5px}
     }
     @media(max-width:1000px){.hero{height:520px;background-position:57% center}.hero-content{width:min(1180px,calc(100% - 38px));max-width:1180px;margin:auto;padding-left:0;padding-right:0}.hero-copy{width:44%;max-width:440px;transform:none}.hero h1{font-size:46px}.hero h2{font-size:26px}.hero-text{font-size:16px}.hero-overlay{background:linear-gradient(90deg,rgba(0,106,205,.16),rgba(0,106,205,.03) 48%,transparent 68%)}}
-    @media(max-width:680px){.hero{height:620px;background-size:auto 100%;background-position:62% center}.hero-overlay{background:linear-gradient(180deg,rgba(0,93,181,.82) 0%,rgba(0,93,181,.67) 48%,rgba(0,93,181,.22) 75%,transparent 100%)}.hero-content{align-items:flex-start}.hero-copy{width:100%;max-width:390px;padding-top:58px}.hero h1{font-size:42px}.hero h2{font-size:26px}.hero-text{font-size:16px}.hero-actions .button{width:auto;max-width:none}.playful-steps article{grid-template-columns:54px 42px 1fr;padding:12px 6px}.playful-steps .step-icon{width:44px;height:44px;font-size:22px}.playful-steps b{font-size:18px}.playful-steps p{font-size:13px}}
+    @media(max-width:680px){.header-logo{width:36px;height:36px;flex-basis:36px}.hero{height:620px;background-size:auto 100%;background-position:62% center}.hero-overlay{background:linear-gradient(180deg,rgba(0,93,181,.82) 0%,rgba(0,93,181,.67) 48%,rgba(0,93,181,.22) 75%,transparent 100%)}.hero-content{align-items:flex-start}.hero-copy{width:100%;max-width:390px;padding-top:58px}.hero h1{font-size:42px}.hero h2{font-size:26px}.hero-text{font-size:16px}.hero-actions .button{width:auto;max-width:none}.playful-steps article{grid-template-columns:54px 42px 1fr;padding:12px 6px}.playful-steps .step-icon{width:44px;height:44px;font-size:22px}.playful-steps b{font-size:18px}.playful-steps p{font-size:13px}}
   </style>
 </head>
 <body>
@@ -49,7 +50,7 @@
 <header class="site-header">
   <div class="wrap nav-wrap">
     <a class="brand" href="#top" aria-label="MiraMilan Books home">
-      <span class="brand-mark">?</span>
+      <img class="header-logo" src="miramilan-logo.png.png" alt="" aria-hidden="true">
       <span><strong>MiraMilan Books</strong><small>Rhyming books that kids love!</small></span>
     </a>
     <nav aria-label="Primary navigation">
