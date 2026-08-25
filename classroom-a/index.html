@@ -28,7 +28,7 @@
     .classroom-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
     .resource-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0b78d0;border:1px solid rgba(7,136,223,.16);box-shadow:0 8px 18px rgba(20,75,110,.08);padding:8px 13px;border-radius:999px;font-family:"Fredoka","Trebuchet MS",Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.04em}
     .resource-badge span{display:inline-grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#ffd84d;color:#083d77;font-size:13px}
-    .classroom-hero h1{font-family:"Fredoka","Trebuchet MS",Arial,sans-serif;font-size:clamp(43px,5.2vw,68px);line-height:.98;letter-spacing:-.04em;color:#083d77;margin:18px 0 18px}
+    .classroom-hero h1{font-family:"Fredoka","Trebuchet MS",Arial,sans-serif;font-size:clamp(43px,4.4vw,58px);line-height:.98;letter-spacing:-.04em;color:#083d77;margin:18px 0 18px}
     .classroom-hero .lead-copy{font-size:18px;line-height:1.55;color:#47677b;max-width:650px;margin:0 0 24px}
     .hero-points{display:grid;gap:9px;margin:0 0 28px;padding:0;list-style:none}
     .hero-points li{font-weight:800;color:#234b67;font-size:14px}
@@ -86,6 +86,7 @@
     .final-box .button{position:relative;z-index:1;background:#ffd84d;color:#083d77;box-shadow:0 10px 22px rgba(1,50,90,.18)}
 
     .variant-note{display:none}
+    @media(min-width:901px){.classroom-hero h1{white-space:nowrap}}
     @media(max-width:900px){
       .classroom-nav{display:none}
       .classroom-hero-grid{grid-template-columns:1fr;gap:38px}
