@@ -39,7 +39,9 @@
 
     const pathname = window.location.pathname;
     const variant = document.body?.dataset?.campaignVariant ||
-      (pathname.includes('/classroom-a') ? 'A' : pathname.includes('/classroom-b') ? 'B' : 'Home');
+      (pathname.includes('/classroom-a') ? 'A' :
+       pathname.includes('/classroom-b') ? 'B' :
+       pathname.includes('/classroom-c') ? 'C' : 'Home');
     const href = link.href || '';
     const common = {
       campaign_variant: variant,
