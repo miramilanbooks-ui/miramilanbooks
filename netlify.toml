@@ -1,6 +1,9 @@
 [build]
   publish = "."
 
+[functions]
+  included_files = ["email-c-classroom-activity-hires.jpg"]
+
 [[headers]]
   for = "/*"
   [headers.values]
