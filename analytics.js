@@ -1,5 +1,6 @@
 (() => {
   const MEASUREMENT_ID = 'G-523008WXW7';
+  const CLASSROOM_SAMPLE_URL = '/free-classroom-sample.pdf.pdf';
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
@@ -34,24 +35,52 @@
   };
 
   document.addEventListener('click', (event) => {
-    const link = event.target.closest('a');
-    if (!link) return;
-
     const pathname = window.location.pathname;
     const variant = document.body?.dataset?.campaignVariant ||
       (pathname.includes('/classroom-a') ? 'A' :
        pathname.includes('/classroom-b') ? 'B' :
        pathname.includes('/classroom-c') ? 'C' : 'Home');
+
+    const sampleButton = event.target.closest('[data-sample-open]');
+    if (sampleButton) {
+      const absolutePdfUrl = new URL(CLASSROOM_SAMPLE_URL, window.location.origin).href;
+      const popup = window.open('about:blank', '_blank');
+      if (popup) popup.opener = null;
+
+      let opened = false;
+      const openSample = () => {
+        if (opened) return;
+        opened = true;
+        if (popup && !popup.closed) {
+          popup.location.replace(absolutePdfUrl);
+        } else {
+          window.location.assign(absolutePdfUrl);
+        }
+      };
+
+      gtag('event', 'sample_click', {
+        campaign_variant: variant,
+        page_path: pathname,
+        link_url: absolutePdfUrl,
+        download_location: sampleButton.dataset.downloadLocation || 'unknown',
+        interaction_trusted: event.isTrusted ? 'yes' : 'no',
+        event_callback: openSample,
+        event_timeout: 600
+      });
+
+      setTimeout(openSample, 250);
+      return;
+    }
+
+    const link = event.target.closest('a');
+    if (!link) return;
+
     const href = link.href || '';
     const common = {
       campaign_variant: variant,
       page_path: pathname,
       link_url: href
     };
-
-    if (href.includes('free-classroom-sample.pdf')) {
-      gtag('event', 'sample_click', common);
-    }
 
     if (href.includes('amazon.com')) {
       gtag('event', 'amazon_click', {
